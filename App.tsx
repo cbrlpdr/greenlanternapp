@@ -2,11 +2,17 @@ import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import onImg from "./assets/symbol-on.png";
 import offImg from "./assets/symbol-off.png";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import * as Brightness from 'expo-brightness';
 
 export default function App() {
+  const [permissionResponse, requestPermission] = Brightness.usePermissions();
+  requestPermission();
+  
   const [isOn, setIsOn] = useState(false);
+  let brightnessLeve = 0;
 
+  isOn? Brightness.setBrightnessAsync(1) : Brightness.setBrightnessAsync(0);
   const handleLanternPress = () => {
     setIsOn(!isOn);
   }
