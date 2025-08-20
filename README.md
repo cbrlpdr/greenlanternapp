@@ -18,7 +18,7 @@ Tapping the icon toggles the flashlight effect by adjusting the device screen br
 Clone the project and install dependencies:
 
 ```bash
-git clone https://github.com/yourusername/green-lantern-flashlight.git
+git clone https://github.com/cbrlpdr/greenlanternapp
 cd green-lantern-flashlight
 npm install
 ```
